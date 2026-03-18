@@ -22,13 +22,56 @@
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="cart-icon" id="cartIcon" aria-label="Shopping cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge" id="cartBadge">0</span>
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
+
+    <!-- Order Modal -->
+    <div class="modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="modalTitle">Order via WhatsApp</h3>
+                <button class="modal-close" id="modalClose" aria-label="Close order modal">&times;</button>
+            </div>
+            <div class="modal-product-info" id="modalProductInfo"></div>
+            <form class="modal-form" id="orderForm" novalidate>
+                <div class="form-group">
+                    <label for="orderQuantity">Quantity</label>
+                    <input type="number" id="orderQuantity" name="quantity" min="1" max="99" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="orderName">Your Name</label>
+                    <input type="text" id="orderName" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="orderAddress">Delivery Address</label>
+                    <textarea id="orderAddress" name="address" rows="3" placeholder="Enter your complete delivery address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="orderPayment">Payment Mode</label>
+                    <select id="orderPayment" name="payment" required>
+                        <option value="" disabled selected>Select payment mode</option>
+                        <option value="COD">Cash on Delivery (COD)</option>
+                        <option value="UPI">UPI</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Debit Card">Debit Card</option>
+                    </select>
+                </div>
+                <div class="form-error" id="formError" role="alert"></div>
+                <button type="submit" class="whatsapp-submit-btn">
+                    <i class="fab fa-whatsapp"></i> Send Order on WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -148,6 +191,9 @@
             <p>&copy; 2026 Cute Craft Gifts. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Notification Toast -->
+    <div class="notification" id="notification" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
 </body>
