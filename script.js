@@ -5,6 +5,22 @@
  */
 
 /* -----------------------------------------------
+   CONFIGURATION
+----------------------------------------------- */
+
+/**
+ * WhatsApp business number (country code + number, no spaces or +).
+ * Update this to the actual business number before going live.
+ */
+const WHATSAPP_NUMBER = '919999999999';
+
+/** Number of columns in the product grid (used for stagger animation). */
+const GRID_COLUMNS = 3;
+
+/** Delay in milliseconds between staggered grid item animations. */
+const STAGGER_DELAY_MS = 100;
+
+/* -----------------------------------------------
    PRODUCT DATA
 ----------------------------------------------- */
 
@@ -329,8 +345,7 @@ function submitOrder(event) {
         `💳 *Payment Mode:* ${payment}\n\n` +
         `Please confirm my order. Thank you! 🙏`;
 
-    const whatsappNumber = '919999999999'; // Replace with actual WhatsApp number
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     closeOrderModal();
@@ -396,7 +411,7 @@ function observeFadeElements() {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
                     // Stagger delay for grid items
-                    const delay = (index % 3) * 100;
+                    const delay = (index % GRID_COLUMNS) * STAGGER_DELAY_MS;
                     entry.target.style.transitionDelay = `${delay}ms`;
                     entry.target.classList.add('visible');
                     fadeObserver.unobserve(entry.target);
