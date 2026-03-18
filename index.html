@@ -4,10 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Cute Craft Gifts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Cute Craft Gifts - Premium Handmade Gifts</title>
 </head>
 <body>
-    <h1>Welcome to Cute Craft Gifts!</h1>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-gift"></i>
+                <span>Cute Craft Gifts</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#featured" class="nav-link">Featured</a></li>
+                <li><a href="#shop" class="nav-link">Shop</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Handcrafted Gifts with Love</h1>
+            <p class="hero-subtitle">Premium, aesthetic, and Gen-Z approved gifts for every occasion</p>
+            <button class="cta-button" onclick="document.getElementById('shop').scrollIntoView({ behavior: 'smooth' })">
+                Explore Shop
+            </button>
+        </div>
+        <div class="hero-image">
+            <div class="floating-element">✨</div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured" class="featured">
+        <h2>Featured Products</h2>
+        <p class="section-subtitle">Our most loved creations</p>
+        <div class="products-grid" id="featuredProducts"></div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop">
+        <h2>All Products</h2>
+        <p class="section-subtitle">Browse our complete collection</p>
+        
+        <!-- Filter Section -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="keychains">Keychains</button>
+            <button class="filter-btn" data-filter="cards">Cards</button>
+            <button class="filter-btn" data-filter="decor">Decor</button>
+        </div>
+
+        <div class="products-grid" id="shopProducts"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>At Cute Craft Gifts, we believe in creating handmade products that bring joy and warmth to your life. Each item is crafted with love and attention to detail.</p>
+                <p>Our mission is to provide premium, aesthetic gifts that resonate with modern sensibilities while maintaining the personal touch of handmade craftsmanship.</p>
+            </div>
+            <div class="about-features">
+                <div class="feature">
+                    <i class="fas fa-heart"></i>
+                    <h3>Handmade with Love</h3>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-star"></i>
+                    <h3>Premium Quality</h3>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-gift"></i>
+                    <h3>Custom Orders</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p class="section-subtitle">We'd love to hear from you!</p>
+        <div class="contact-content">
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button class="submit-btn">Send Message</button>
+            </div>
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 XXXX-XXX-XXX</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>contact@cutecraftgifts.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Cute Craft Gifts</h4>
+                <p>Premium handmade gifts for every occasion</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Cute Craft Gifts. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
